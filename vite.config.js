@@ -5,7 +5,14 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  build: '/',
+  // build: '/',
+  build: {
+    sourcemap: false,
+    minify: 'esbuild',
+    target: 'es2022',
+    treeshake: true,
+  },
+  base: '/hop_on_sg_bus_tracker/',
   server: {
     port: 5173,
     host: '0.0.0.0',
