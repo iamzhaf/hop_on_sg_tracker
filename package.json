@@ -1,5 +1,5 @@
 {
-  "name": "hop_on_sg_bus_tracker",
+  "name": "hop_on_sg_tracker",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
