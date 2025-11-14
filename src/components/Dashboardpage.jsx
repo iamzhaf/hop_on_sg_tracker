@@ -132,15 +132,15 @@ export default function DashboardPage() {
   // Loading state
   if (loading) {
     return (
-      <div className="fixed inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-y-auto">
+      <div className="fixed inset-0 bg-gradient-to-br from-green-500 via-green-500 to-green-500 overflow-y-auto">
         <div className="min-h-screen p-4 pb-8 flex items-center justify-center">
           <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center max-w-md">
-            <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Bus className="w-10 h-10 text-indigo-600 animate-bounce" />
+            <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Bus className="w-10 h-10 text-green-600 animate-bounce" />
             </div>
             <p className="text-2xl font-semibold text-gray-900 mb-2">Loading bus arrivals...</p>
             <p className="text-gray-600 mb-4">Fetching real-time data from LTA</p>
-            <Loader className="w-8 h-8 text-indigo-600 animate-spin mx-auto" />
+            <Loader className="w-8 h-8 text-green-600 animate-spin mx-auto" />
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@ export default function DashboardPage() {
   // Error state
   if (error && buses.length === 0) {
     return (
-      <div className="fixed inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-y-auto">
+      <div className="fixed inset-0 bg-gradient-to-br from-green-500 via-green-500 to-green-500 overflow-y-auto">
         <div className="min-h-screen p-4 pb-8 flex items-center justify-center">
           <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center max-w-md">
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -161,7 +161,7 @@ export default function DashboardPage() {
             <div className="space-y-3">
               <button
                 onClick={handleRefresh}
-                className="w-full px-6 py-3 bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-xl font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all shadow-lg"
+                className="w-full px-6 py-3 bg-gradient-to-br from-green-500 to-green-500 text-white rounded-xl font-semibold hover:from-green-600 hover:to-green-600 transition-all shadow-lg"
               >
                 Try Again
               </button>
@@ -181,30 +181,30 @@ export default function DashboardPage() {
   // Bus Route View
   if (selectedBus) {
     return (
-      <div className="fixed inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-y-auto">
+      <div className="fixed inset-0 bg-gradient-to-br from-green-300 via-green-300 to-green-100 overflow-y-auto">
         <div className="min-h-screen p-4 pb-8">
           <div className="max-w-2xl mx-auto">
             
             <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-6 mb-6 border border-white/20">
               <button
                 onClick={() => setSelectedBus(null)}
-                className="flex items-center gap-2 text-indigo-600 hover:text-indigo-800 mb-4 font-semibold transition-colors"
+                className="flex items-center gap-2 text-green-600 hover:text-green-800 mb-4 font-semibold transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Back to Arrivals
               </button>
 
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-gradient-to-br from-indigo-600 to-purple-600 text-white w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="bg-gradient-to-br from-green-600 to-green-600 text-white w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg">
                   <span className="text-3xl font-bold">{selectedBus.number}</span>
                 </div>
                 <div className="flex-1">
                   <div className="text-xs text-gray-500 mb-1">{selectedBus.operator}</div>
-                  <div className="text-xs text-indigo-600 flex items-center gap-1 mb-1 font-semibold uppercase tracking-wide">
+                  <div className="text-xs text-green-600 flex items-center gap-1 mb-1 font-semibold uppercase tracking-wide">
                     <Navigation className="w-3 h-3" />
                     Route to
                   </div>
-                  <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent">
                     {selectedBus.destination}
                   </h2>
                   <div className="text-xs text-gray-600 flex items-center gap-1.5 bg-gray-100 px-3 py-1.5 rounded-full w-fit mt-2">
@@ -221,7 +221,7 @@ export default function DashboardPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-indigo-500 to-purple-500 text-white p-4 rounded-2xl">
+              <div className="bg-gradient-to-br from-green-50 to-green-50 text-black p-4 rounded-2xl">
                 <div className="text-sm opacity-90 mb-1">Next bus arrives in</div>
                 <div className="text-4xl font-bold">
                   {selectedBus.arrivals[0] === 0 ? 'Arriving' : selectedBus.arrivals[0] === null ? 'N/A' : `${selectedBus.arrivals[0]} min`}
@@ -232,7 +232,7 @@ export default function DashboardPage() {
             {/* Route Timeline */}
             <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border border-white/20">
               <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-indigo-600" />
+                <MapPin className="w-5 h-5 text-green-600" />
                 Bus Stops Along Route
               </h3>
               
@@ -241,18 +241,18 @@ export default function DashboardPage() {
                   <div key={index} className="relative">
                     {index < selectedBus.route.length - 1 && (
                       <div className={`absolute left-6 top-12 w-0.5 h-full ${
-                        stop.status === 'current' ? 'bg-gradient-to-b from-indigo-500 to-gray-300' : 'bg-gray-300'
+                        stop.status === 'current' ? 'bg-gradient-to-b from-green-50 to-gray-300' : 'bg-gray-300'
                       }`}></div>
                     )}
                     
                     <div className={`relative flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 ${
                       stop.status === 'current' 
-                        ? 'bg-gradient-to-r from-indigo-50 to-purple-50 shadow-md' 
+                        ? 'bg-gradient-to-r from-green-50 to-green-50 shadow-md' 
                         : 'hover:bg-gray-50'
                     }`}>
                       <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center z-10 ${
                         stop.status === 'current'
-                          ? 'bg-gradient-to-br from-indigo-500 to-purple-500 shadow-lg'
+                          ? 'bg-gradient-to-br from-green-50 to-green-50 shadow-lg'
                           : 'bg-gray-200'
                       }`}>
                         {stop.status === 'current' ? (
@@ -266,13 +266,13 @@ export default function DashboardPage() {
                         <div className="flex items-start justify-between gap-2">
                           <div className="flex-1">
                             <h4 className={`font-bold ${
-                              stop.status === 'current' ? 'text-indigo-900 text-lg' : 'text-gray-900'
+                              stop.status === 'current' ? 'text-green-900 text-lg' : 'text-gray-900'
                             }`}>
                               {stop.name}
                             </h4>
                             <p className="text-sm text-gray-500 mt-0.5">Stop {stop.code}</p>
                             {stop.status === 'current' && (
-                              <span className="inline-block mt-2 px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full">
+                              <span className="inline-block mt-2 px-3 py-1 bg-green-600 text-black text-xs font-semibold rounded-full">
                                 Current Stop
                               </span>
                             )}
@@ -280,7 +280,7 @@ export default function DashboardPage() {
                           
                           <div className="text-right flex-shrink-0">
                             <div className={`text-sm font-semibold ${
-                              stop.status === 'current' ? 'text-indigo-600' : 'text-gray-600'
+                              stop.status === 'current' ? 'text-green-600' : 'text-gray-600'
                             }`}>
                               {stop.distance}
                             </div>
@@ -305,7 +305,7 @@ export default function DashboardPage() {
 
   // Main Dashboard View
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-y-auto">
+    <div className="fixed inset-0 bg-gradient-to-br from-green-300 via-green-300 to-green-100 overflow-y-auto">
       <div className="min-h-screen p-4 pb-8">
         <div className="max-w-2xl mx-auto">
           
@@ -313,7 +313,7 @@ export default function DashboardPage() {
           <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-6 mb-6 border border-white/20">
             <button
               onClick={handleBackToList}
-              className="flex items-center gap-2 text-indigo-600 hover:text-indigo-800 mb-4 font-semibold transition-colors"
+              className="flex items-center gap-2 text-green-800 hover:text-green-800 mb-4 font-semibold transition-colors "
             >
               <ArrowLeft className="w-5 h-5" />
               Back to Bus Stops
@@ -321,18 +321,18 @@ export default function DashboardPage() {
             
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <div className="flex items-center gap-2 text-indigo-600 text-sm mb-2 font-medium">
+                <div className="flex items-center gap-2 text-black text-sm mb-2 font-medium text-green-800">
                   <MapPin className="w-4 h-4" />
                   <span>Bus Stop {busStopCode}</span>
                 </div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-4xl font-bold bg-gradient-to-br from-green-500 to-green-400 bg-clip-text text-transparent">
                   {busStopName}
                 </h1>
               </div>
               <button
                 onClick={handleRefresh}
                 disabled={isRefreshing}
-                className="p-3 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 disabled:opacity-50 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="p-3 rounded-2xl bg-gradient-to-br from-green-500 to-green-500 hover:from-green-600 hover:to-green-600 transition-all duration-300 disabled:opacity-50 shadow-lg hover:shadow-xl transform hover:scale-105"
                 aria-label="Refresh"
               >
                 <RefreshCw className={`w-5 h-5 text-white ${isRefreshing ? 'animate-spin' : ''}`} />
@@ -340,9 +340,9 @@ export default function DashboardPage() {
             </div>
             
             <div className="flex items-center justify-between gap-4 flex-wrap">
-              <div className="flex items-center gap-2 bg-gradient-to-r from-indigo-50 to-purple-50 px-4 py-2 rounded-xl">
-                <Clock className="w-4 h-4 text-indigo-600" />
-                <span className="text-sm font-semibold text-indigo-900">
+              <div className="flex items-center gap-2 bg-gradient-to-r from-green-50 to-green-50 px-4 py-2 rounded-xl">
+                <Clock className="w-4 h-4 text-green-500" />
+                <span className="text-sm font-semibold text-green-800">
                   {currentTime.toLocaleTimeString('en-SG', { 
                     hour: '2-digit', 
                     minute: '2-digit',
@@ -354,7 +354,7 @@ export default function DashboardPage() {
               {lastUpdated && (
                 <div className="flex items-center gap-2 bg-emerald-50 px-3 py-1.5 rounded-lg">
                   <Wifi className="w-3 h-3 text-emerald-600" />
-                  <span className="text-xs text-emerald-700 font-medium">
+                  <span className="text-xs text-green-800 font-medium">
                     Live • Updated {Math.floor((Date.now() - lastUpdated) / 1000)}s ago
                   </span>
                 </div>
@@ -382,16 +382,16 @@ export default function DashboardPage() {
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-4">
-                        <div className="bg-gradient-to-br from-indigo-600 to-purple-600 text-white w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg">
+                        <div className="bg-gradient-to-br from-green-600 to-green-600 text-white w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg">
                           <span className="text-3xl font-bold">{bus.number}</span>
                         </div>
                         <div>
                           <div className="text-xs text-gray-500 mb-1">{bus.operator}</div>
-                          <div className="text-xs text-indigo-600 flex items-center gap-1 mb-1 font-semibold uppercase tracking-wide">
-                            <Navigation className="w-3 h-3" />
+                          <div className="text-xs text-green-800 flex items-center gap-1 mb-1 font-semibold uppercase tracking-wide">
+                            <Navigation className="w-3 h-3 text-green-800" />
                             To
                           </div>
-                          <div className="text-xl font-bold text-gray-900 mb-1">
+                          <div className="text-xl font-bold text-green-800 mb-1">
                             {bus.destination}
                           </div>
                           <div className="text-xs text-gray-600 flex items-center gap-1.5 bg-gray-100 px-3 py-1.5 rounded-full w-fit">
@@ -416,7 +416,7 @@ export default function DashboardPage() {
                           key={idx}
                           className={`flex-1 text-center py-4 rounded-2xl transition-all duration-300 ${
                             idx === 0
-                              ? 'bg-gradient-to-br from-indigo-500 to-purple-500 shadow-lg transform scale-105'
+                              ? 'bg-gradient-to-br from-green-500 to-green-500 shadow-lg transform scale-105'
                               : 'bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200'
                           }`}
                         >
@@ -449,7 +449,7 @@ export default function DashboardPage() {
                       </div>
                     </div>
 
-                    <div className="mt-3 flex items-center justify-center gap-2 text-indigo-600 text-sm font-medium">
+                    <div className="mt-3 flex items-center justify-center gap-2 text-green-600 text-sm font-medium">
                       <span>Tap to view route</span>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -463,10 +463,10 @@ export default function DashboardPage() {
 
           {/* Footer */}
           <div className="mt-8 text-center bg-white/20 backdrop-blur-xl rounded-2xl p-4 border border-white/30">
-            <p className="text-sm text-white font-semibold mb-2">
+            <p className="text-sm text-black font-semibold mb-2">
               Real-time data from LTA DataMall
             </p>
-            <p className="text-xs text-white/80">
+            <p className="text-xs text-black/80">
               ✨ Updates automatically every 30 seconds
             </p>
           </div>

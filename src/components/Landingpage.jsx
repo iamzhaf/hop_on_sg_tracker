@@ -253,7 +253,7 @@ export default function LandingPage() {
   // Error state
   if (dataError) {
     return (
-      <div className="fixed inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-y-auto flex items-center justify-center">
+      <div className="fixed inset-0 bg-gradient-to-br from-green-300 via-green-300 to-green-100 overflow-y-auto flex items-center justify-center">
         <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center max-w-md">
           <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <AlertCircle className="w-10 h-10 text-red-600" />
@@ -262,7 +262,7 @@ export default function LandingPage() {
           <p className="text-gray-600 mb-4 text-sm">{dataError}</p>
           <button
             onClick={loadBusStopsFromCSV}
-            className="px-6 py-3 bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-xl font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all shadow-lg"
+            className="px-6 py-3 bg-gradient-to-br from-green-300 via-green-300 to-green-100 text-white rounded-xl font-semibold hover:from-indigo-600 hover:to-purple-600 transition-all shadow-lg"
           >
             Try Again
           </button>
@@ -274,20 +274,20 @@ export default function LandingPage() {
   // Loading state
   if (locationLoading || dataLoading) {
     return (
-      <div className="fixed inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-y-auto flex items-center justify-center">
+      <div className="fixed inset-0 bg-gradient-to-br from-green-300 via-green-300 to-green-100 overflow-y-auto flex items-center justify-center">
         <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 text-center max-w-md">
-          <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 bg-gradient-to-br from-green-300 via-green-300 to-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             {dataLoading ? (
-              <Bus className="w-10 h-10 text-indigo-600 animate-bounce" />
+              <Bus className="w-10 h-10 text-green-600 animate-bounce" />
             ) : (
-              <Locate className="w-10 h-10 text-indigo-600 animate-pulse" />
+              <Locate className="w-10 h-10 text-green-600 animate-pulse" />
             )}
           </div>
           <p className="text-2xl font-semibold text-gray-900 mb-2">
             {dataLoading ? 'Loading bus stops...' : 'Finding your location...'}
           </p>
           <div className="mt-6">
-            <Loader className="w-8 h-8 text-indigo-600 animate-spin mx-auto" />
+            <Loader className="w-8 h-8 text-green-600 animate-spin mx-auto" />
           </div>
         </div>
       </div>
@@ -295,7 +295,7 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 overflow-y-auto">
+    <div className="fixed inset-0 bg-gradient-to-br from-green-300 via-green-300 to-green-100 overflow-y-auto">
       <div className="max-w-3xl mx-auto">
         
         {/* Hero Header */}
@@ -303,36 +303,36 @@ export default function LandingPage() {
           <div className="inline-block bg-white/20 backdrop-blur-xl rounded-full px-6 py-3 mb-6 border border-white/30">
             <div className="flex items-center gap-3">
               <div className="bg-white rounded-full p-2">
-                <Bus className="w-6 h-6 text-indigo-600" />
+                <Bus className="w-6 h-6 text-green-500" />
               </div>
-              <span className="font-bold text-2xl text-white">Hop On SG</span>
+              <span className="font-bold text-2xl text-black">Go green and hop on</span>
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl font-bold text-black mb-4 drop-shadow-lg">
             Find Your Bus Stop
           </h1>
-          <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-black/90 text-lg md:text-xl max-w-2xl mx-auto">
             Get your bus arrivals at your fingertips.
           </p>
 
           {locationError && (
             <div className="mt-4 bg-amber-500/20 backdrop-blur-xl border border-amber-300/50 rounded-2xl px-4 py-2 inline-block">
-              <p className="text-sm text-white font-medium">{locationError}</p>
+              <p className="text-sm text-black font-medium">{locationError}</p>
             </div>
           )}
 
           <div className="flex items-center justify-center gap-6 mt-8">
             <div className="bg-white/20 backdrop-blur-xl rounded-2xl px-6 py-3 border border-white/30">
-              <div className="text-3xl font-bold text-white">{busStops.length}</div>
-              <div className="text-sm text-white/80">Bus Stops</div>
+              <div className="text-3xl font-bold text-black">{busStops.length}</div>
+              <div className="text-sm text-black/80">Bus Stops</div>
             </div>
             <div className="bg-white/20 backdrop-blur-xl rounded-2xl px-6 py-3 border border-white/30">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                <div className="text-3xl font-bold text-white">Live</div>
+                <div className="text-3xl font-bold text-black">Live</div>
               </div>
-              <div className="text-sm text-white/80">Real-Time</div>
+              <div className="text-sm text-black/80">Real-Time</div>
             </div>
           </div>
         </div>
@@ -366,8 +366,8 @@ export default function LandingPage() {
                 onClick={() => setSortBy('distance')}
                 className={`px-5 py-2.5 rounded-xl font-semibold transition-all transform hover:scale-105 ${
                   sortBy === 'distance'
-                    ? 'bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg border-4 border-indigo-500'
-                    : 'bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg border-4 border-indigo-300'
+                    ? 'bg-gradient-to-br from-green-400 to-green-500 text-black shadow-lg border-4 border-green-600'
+                    : 'bg-gradient-to-br from-green-400 to-green-500 text-black shadow-lg border-4 border-green-300'
                 }`}
               >
                 <div className="flex items-center gap-2">
@@ -379,8 +379,8 @@ export default function LandingPage() {
                 onClick={() => setSortBy('name')}
                 className={`px-5 py-2.5 rounded-xl font-semibold transition-all transform hover:scale-105 ${
                   sortBy === 'name'
-                    ? 'bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg border-4 border-indigo-500'
-                    : 'bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg border-4 border-indigo-300'
+                    ? 'bg-gradient-to-br from-green-400 to-green-500 text-black shadow-lg border-4 border-green-600'
+                    : 'bg-gradient-to-br from-green-400 to-green-500 text-black shadow-lg border-4 border-green-300'
                 }`}
               >
                 <div className="flex items-center gap-2">
@@ -390,9 +390,9 @@ export default function LandingPage() {
               </button>
             </div>
 
-            <div className="flex items-center gap-2 bg-gradient-to-r from-indigo-50 to-purple-50 px-4 py-2 rounded-xl border border-indigo-200">
-              <div className="w-2 h-2 bg-indigo-600 rounded-full animate-pulse"></div>
-              <span className="text-sm text-indigo-900 font-semibold">
+            <div className="flex items-center gap-2 bg-gradient-to-r from-green-50 to-green-50 px-4 py-2 rounded-xl border border-green-200">
+              <div className="w-2 h-2 bg-green-600 rounded-full animate-pulse"></div>
+              <span className="text-sm text-green-900 font-semibold">
                 {filteredStops.length} {filteredStops.length === 1 ? 'stop' : 'stops'} found
               </span>
             </div>
@@ -426,7 +426,7 @@ export default function LandingPage() {
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-3 flex-wrap">
-                        <div className="bg-gradient-to-br from-indigo-600 to-purple-600 text-white px-4 py-1.5 rounded-lg shadow-md">
+                        <div className="bg-gradient-to-br from-green-600 to-green-600 text-white px-4 py-1.5 rounded-lg shadow-md">
                           <span className="text-sm font-bold">{stop.code}</span>
                         </div>
                         <div className={`px-3 py-1.5 rounded-lg text-sm font-semibold shadow-sm border-2 ${getDistanceColor(stop.distance)}`}>
@@ -448,8 +448,8 @@ export default function LandingPage() {
                     </div>
 
                     <div className="flex-shrink-0 ml-4">
-                      <div className="bg-gradient-to-br from-indigo-100 to-purple-100 w-12 h-12 rounded-full flex items-center justify-center">
-                        <ChevronRight className="w-6 h-6 text-indigo-600" />
+                      <div className="bg-gradient-to-br from-green-100 to-green-100 w-12 h-12 rounded-full flex items-center justify-center">
+                        <ChevronRight className="w-6 h-6 text-green-600" />
                       </div>
                     </div>
                   </div>
@@ -465,18 +465,18 @@ export default function LandingPage() {
             <div className="bg-white/20 backdrop-blur-xl rounded-2xl p-4 border border-white/30 text-center">
               <div className="flex items-center justify-center gap-2 text-white flex-wrap">
                 <Locate className="w-5 h-5 text-emerald-300" />
-                <span className="font-medium text-sm">
+                <span className="font-medium text-sm text-black">
                   Distances calculated from your location ({userLocation.latitude.toFixed(4)}°, {userLocation.longitude.toFixed(4)}°)
                 </span>
               </div>
             </div>
           )}
 
-          <div className="text-center space-y-2">
-            <p className="text-white/90 text-sm font-medium">
+          <div className="text-center space-y-2 mb-10">
+            <p className="text-black/90 text-sm font-medium">
               Powered by LTA DataMall • Real-time bus data
             </p>
-            <p className="text-white/70 text-xs">
+            <p className="text-black/70 text-xs">
               © 2025 Hop-On SG. All rights reserved.
             </p>
           </div>
