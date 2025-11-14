@@ -16,6 +16,7 @@ export default function LandingPage() {
   const [filteredStops, setFilteredStops] = useState([]);
   const [dataLoading, setDataLoading] = useState(true);
   const [dataError, setDataError] = useState(null);
+  const csvUrl = `${import.meta.env.BASE_URL}data/busstops.csv`;
 
   /**
    * Clean bus stop description for URL
@@ -79,7 +80,7 @@ export default function LandingPage() {
     setDataLoading(true);
     setDataError(null);
 
-    fetch('/data/busstops.csv')
+    fetch(csvUrl)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
