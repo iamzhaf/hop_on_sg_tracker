@@ -2,11 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Google Tags-->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6D9FJK5F4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-M6D9FJK5F4');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <!-- Tracking user behaviour-->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5XDTJ9GS');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta/Keyword tags -->
+    <meta name="description" content="Hop-On SG Bus Transit Tracker" />
+    <meta name="keywords" content="Hop-On SG Bus Transit Tracker, Singapore Bus Tracker, Bus Transit Tracker, Bus Tracker App, Bus Tracker Singapore" />
+    <meta name="author" content="Zhafran" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hop_on_sg_bus_tracker</title>
+
+    <!-- Favicon configurations -->
+    <link rel="icon" type="image/png" href="/favicon-hop-on-sg/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/favicon-hop-on-sg/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon-hop-on-sg/apple-touch-icon.png">
+    
+    <title>Hop-On SG Bus Transit Tracker</title>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XDTJ9GS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

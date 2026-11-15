@@ -12,7 +12,7 @@ export default defineConfig({
     target: 'es2022',
     treeshake: true,
   },
-  base: '/hop_on_sg_tracker/',
+  base: '/',
   server: {
     port: 5173,
     host: '0.0.0.0',
